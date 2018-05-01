@@ -1,3 +1,7 @@
-<p>
-  book-table works!
-</p>
+<app-search></app-search>
+<div class="container-fluid">
+  <div class="row">
+      <app-book-min class="col-12 col-lg-6" *ngFor="let book of books" [title]="book.title_suggest" [img]="book.cover_i"
+                    [author]="book.author_name" [firstPublished]="book.first_publish_year"></app-book-min>
+  </div>
+</div>

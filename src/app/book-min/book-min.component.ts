@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-book-min',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-min.component.css']
 })
 export class BookMinComponent implements OnInit {
+  @Input() img;
+  @Input() title;
+  @Input() author;
+  @Input() firstPublished;
 
   constructor() { }
 

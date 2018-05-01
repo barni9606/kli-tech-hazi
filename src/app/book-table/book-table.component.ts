@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../services/search.service';
 
 @Component({
   selector: 'app-book-table',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookTableComponent implements OnInit {
 
-  constructor() { }
+  public books = [];
+
+  constructor(private searchService: SearchService) {
+    searchService.booksObservable.subscribe((data) => {
+      if (data != null) {
+        this.books = data.docs;
+      }
+    });
+  }
 
   ngOnInit() {
   }

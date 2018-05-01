@@ -1,0 +1,36 @@
+.min-book-container {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.details {
+}
+.book-cover {
+  width: 80px;
+  margin: 10px 10px 0 5px;
+}
+
+.cover {
+  height: 80px;
+  width: 50px;
+}
+
+h3.booktitle {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 1.0em;
+  font-weight: 700;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+
+span.resultTitle {
+  margin: 0!important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: #666;
+}
+
+a.results {
+  color: #000;
+  text-decoration: none;
+}

@@ -1,3 +1,20 @@
-<p>
-  book-min works!
-</p>
+<mat-card>
+  <div class="min-book-container container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-2">
+        <span class="book-cover">
+          <a href="{{'http://covers.openlibrary.org/b/id/' + img + '-L.jpg'}}">
+            <img class="cover" src="{{'http://covers.openlibrary.org/b/id/' + img + '-S.jpg'}}"/>
+          </a>
+        </span>
+      </div>
+      <div class="col-12 col-sm-10">
+        <div class="details">
+          <span class="result-title"><h4 class="book-title"><a class="results" href="#">{{title}}</a></h4></span>
+          <div class="author">by {{author}}</div>
+          <div class="first-published">{{firstPublished}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

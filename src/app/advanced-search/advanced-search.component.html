@@ -1,3 +1,8 @@
-<p>
-  advanced-search works!
-</p>
+<div class="container-fluid">
+  <mat-form-field *ngFor="let option of options" class="col-12 col-md-6 col-lg-3">
+    <mat-label>{{option.label}}</mat-label>
+    <input matInput [(ngModel)]="option.variable">
+  </mat-form-field>
+  <button mat-raised-button class="col-12" (click)="search()">Search</button>
+</div>
+<app-book-table></app-book-table>

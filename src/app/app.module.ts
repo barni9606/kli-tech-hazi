@@ -11,7 +11,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { SearchComponent } from './search/search.component';
 import {
   MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule,
-  MatSelectModule
+  MatSelectModule, MatTabsModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -20,10 +20,10 @@ import {SearchService} from './services/search.service';
 
 
 const appRoutes: Routes = [
-  { path: '', component: BookTableComponent },
+  { path: 'simple-search', component: SearchComponent },
   { path: 'advanced-search', component: AdvancedSearchComponent },
   { path: 'book-detail', component: BookDetailComponent },
-  { path: '**', redirectTo: '/'}
+  { path: '**', redirectTo: '/simple-search'}
   ];
 
 @NgModule({
@@ -47,6 +47,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatCardModule,
     MatIconModule,
+    MatTabsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }

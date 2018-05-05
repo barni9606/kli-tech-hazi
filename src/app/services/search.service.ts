@@ -44,7 +44,7 @@ export class SearchService {
   }
 
   private searchApi() {
-    if (this.searchString && this.page && this.limit) {
+    if (this.searchString && this.page && this.limit && this.searchString !== '') {
       this.httpClient.get(this.api + this.searchString + '&limit=' + this.limit + '&page=' + this.page).subscribe((data) => {
         this.books.next(data);
       });

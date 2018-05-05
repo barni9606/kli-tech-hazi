@@ -9,7 +9,6 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   public searchString: string;
-  public data: string;
 
   constructor(private searchService: SearchService, private router: Router) { }
 
@@ -17,7 +16,9 @@ export class SearchComponent implements OnInit {
   }
 
   public search(): void {
-    this.searchService.search('q=' + this.searchString.replace(' ', '+'));
+    if (this.searchString) {
+      this.searchService.search('q=' + this.searchString.replace(' ', '+'));
+    }
   }
 
 }

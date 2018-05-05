@@ -1,10 +1,10 @@
-<mat-card>
+<mat-card class="holder">
   <div class="min-book-container container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2">
         <span class="book-cover">
-          <a href="{{'http://covers.openlibrary.org/b/id/' + img + '-L.jpg'}}">
-            <img class="cover" src="{{'http://covers.openlibrary.org/b/id/' + img + '-S.jpg'}}"/>
+          <a href="{{largeImageUrl()}}">
+            <img class="cover" src="{{smallImageUrl()}}"/>
           </a>
         </span>
       </div>

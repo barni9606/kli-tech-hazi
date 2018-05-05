@@ -9,16 +9,28 @@ import {SearchService} from '../services/search.service';
 export class BookTableComponent implements OnInit {
 
   public books = [];
+  public maxPages: number;
+  public currentPage: number;
 
   constructor(private searchService: SearchService) {
     searchService.booksObservable.subscribe((data) => {
       if (data != null) {
         this.books = data.docs;
+        this.currentPage = searchService.getCurrentPage();
+        this.maxPages = searchService.getMaxPages();
       }
     });
   }
 
   ngOnInit() {
+  }
+
+  public nextPage() {
+    this.searchService.nextPage();
+  }
+
+  public previousPage() {
+    this.searchService.previousPage();
   }
 
 }

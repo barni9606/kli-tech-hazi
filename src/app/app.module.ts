@@ -9,7 +9,10 @@ import { BookTableComponent } from './book-table/book-table.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule,
+  MatSelectModule
+} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -43,9 +46,10 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatSelectModule,
     MatCardModule,
+    MatIconModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false }
     )
   ],
   providers: [SearchService],

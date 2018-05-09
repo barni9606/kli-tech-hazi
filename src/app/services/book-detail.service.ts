@@ -12,6 +12,7 @@ export class BookDetailService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // gets the details of a book (work)
   getWork(work: string) {
     const headers = {accept: 'application/json'};
     this.httpClient.get(this.api + work + '.json').subscribe((data) => {
@@ -19,6 +20,7 @@ export class BookDetailService {
     });
   }
 
+  // gets the details of authors
   getAuthors(authors: string[]) {
     const headers = {accept: 'application/json'};
     const authorDetails: object[] = [];

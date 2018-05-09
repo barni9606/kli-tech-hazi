@@ -26,6 +26,7 @@ export class BookDetailComponent implements OnInit, OnDestroy {
   constructor(private bookDetailService: BookDetailService) {
   }
 
+  // init: subscribe for book details and author details
   ngOnInit() {
     this.bookDetailsSubscription = this.bookDetailService.bookDetailsObservable.subscribe((data) => {
       if (data) {
@@ -60,31 +61,37 @@ export class BookDetailComponent implements OnInit, OnDestroy {
     });
   }
 
+  // destroy: unsubscribe for book details and author details
   ngOnDestroy(): void {
     this.bookDetailsSubscription.unsubscribe();
     this.authorsSubscription.unsubscribe();
   }
 
+  // selects next image if possible
   nextImage() {
     if (this.covers && this.coverIndex < this.covers.length - 1) {
       this.coverIndex++;
     }
   }
 
+  // selects previous image if possible
   previousImage() {
     if (this.covers && this.coverIndex > 0) {
       this.coverIndex--;
     }
   }
 
-  smallImageUrl(): string {
+  // returns the medium variant of the cover image
+  mediumImageUrl(): string {
     return this.image('M');
   }
 
+  // returns the large variant of the cover image
   largeImageUrl(): string {
     return this.image('L');
   }
 
+  // helper for cover image URL
   private image(size: string): string {
     if (this.covers && this.covers.length > 0) {
       return 'http://covers.openlibrary.org/b/id/' + this.covers[this.coverIndex] + '-' + size + '.jpg';

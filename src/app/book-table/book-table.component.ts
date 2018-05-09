@@ -17,8 +17,8 @@ export class BookTableComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) {
   }
 
+  // init: subscribe for books
   ngOnInit() {
-
     this.booksSubscription = this.searchService.booksObservable.subscribe((data) => {
       if (data != null) {
         this.books = data.docs;
@@ -28,14 +28,17 @@ export class BookTableComponent implements OnInit, OnDestroy {
     });
   }
 
+  // destroy: unsubscribe for books
   ngOnDestroy(): void {
     this.booksSubscription.unsubscribe();
   }
 
+  // navigates to the next page
   public nextPage() {
     this.searchService.nextPage();
   }
 
+  // navigates to the previous page
   public previousPage() {
     this.searchService.previousPage();
   }

@@ -7,7 +7,7 @@
   <mat-card-content>
     <div *ngIf="covers" class="cover">
       <button mat-button (click)="previousImage()"><mat-icon>chevron_left</mat-icon></button>
-      <a target="_blank" href="{{largeImageUrl()}}"><img class="cover-image" src="{{smallImageUrl()}}"/></a>
+      <a target="_blank" href="{{largeImageUrl()}}"><img class="cover-image" src="{{mediumImageUrl()}}"/></a>
       <button mat-button (click)="nextImage()"><mat-icon>chevron_right</mat-icon></button>
     </div>
     <p *ngIf="published">{{published}}</p>

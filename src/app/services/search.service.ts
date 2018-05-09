@@ -21,6 +21,7 @@ export class SearchService {
     });
   }
 
+  // searches for books with the given query and resets limit and page
   public search(searchString: string) {
     const headers = {accept: 'application/json'};
     this.searchString = searchString;
@@ -29,6 +30,7 @@ export class SearchService {
     this.searchApi();
   }
 
+  // navigates to next page of books
   public nextPage() {
     if (this.page < this.maxPages) {
       this.page += 1;
@@ -36,6 +38,7 @@ export class SearchService {
     }
   }
 
+  // navigates to previous page of books
   public previousPage() {
     if (this.page > 1) {
       this.page -= 1;

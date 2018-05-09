@@ -36,5 +36,14 @@ a.results {
 }
 
 .holder {
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+  background-color: white;
   margin-bottom: 2em;
+}
+
+.holder:hover {
+  background-color: aliceblue;
+  cursor: pointer;
 }

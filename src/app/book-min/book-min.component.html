@@ -1,16 +1,14 @@
-<mat-card class="holder">
+<mat-card class="holder" (click)="navigateToDetails()">
   <div class="min-book-container container-fluid">
     <div class="row">
       <div class="col-12 col-sm-2">
         <span class="book-cover">
-          <a href="{{largeImageUrl()}}">
-            <img class="cover" src="{{smallImageUrl()}}"/>
-          </a>
+          <img class="cover" src="{{smallImageUrl()}}"/>
         </span>
       </div>
       <div class="col-12 col-sm-10">
         <div class="details">
-          <span class="result-title"><h4 class="book-title"><a class="results" href="#">{{title}}</a></h4></span>
+          <span class="result-title"><h4 class="book-title"><span class="results">{{title}}</span></h4></span>
           <div class="author">by {{author}}</div>
           <div class="first-published">{{firstPublished}}</div>
         </div>

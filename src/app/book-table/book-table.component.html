@@ -8,7 +8,7 @@
       <mat-icon>chevron_right</mat-icon>
     </button>
       <app-book-min class="col-12 col-lg-6" *ngFor="let book of books" [title]="book.title_suggest" [img]="book.cover_i"
-                    [author]="book.author_name" [firstPublished]="book.first_publish_year"></app-book-min>
+                    [author]="book.author_name" [firstPublished]="book.first_publish_year" [key]="book.key"></app-book-min>
     <div class="col-12 center" *ngIf="currentPage">{{currentPage}} / {{maxPages}}</div>
     <button mat-button class="col-6 arrow" (click)="previousPage()" *ngIf="currentPage">
       <mat-icon>chevron_left</mat-icon>

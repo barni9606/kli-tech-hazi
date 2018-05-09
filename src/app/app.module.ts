@@ -10,13 +10,14 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatProgressSpinnerModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatProgressSpinnerModule,
   MatSelectModule, MatTabsModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SearchService} from './services/search.service';
+import {BookDetailService} from './services/book-detail.service';
 
 
 const appRoutes: Routes = [
@@ -49,12 +50,16 @@ const appRoutes: Routes = [
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatExpansionModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
     )
   ],
-  providers: [SearchService],
+  providers: [
+    SearchService,
+    BookDetailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

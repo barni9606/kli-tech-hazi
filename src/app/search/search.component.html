@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <mat-form-field class="col-12 col-sm-10">
-    <mat-label>Title</mat-label>
-    <input matInput [(ngModel)]="searchString">
+    <mat-label>Type here</mat-label>
+    <input matInput [(ngModel)]="searchString" (keyup.enter)="search()">
   </mat-form-field>
   <button mat-raised-button class="col-12 col-sm-1" (click)="search()">Search</button>
   <mat-spinner *ngIf="loading" class="center"></mat-spinner>

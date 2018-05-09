@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {BookDetailService} from '../services/book-detail.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-min',
@@ -10,10 +12,16 @@ export class BookMinComponent implements OnInit {
   @Input() title: string;
   @Input() author: string;
   @Input() firstPublished;
+  @Input() key: string;
 
-  constructor() { }
+  constructor(private bookDetailService: BookDetailService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigateToDetails() {
+    this.bookDetailService.getWork(this.key);
+    this.router.navigate(['/book-detail']);
   }
 
   smallImageUrl(): string {

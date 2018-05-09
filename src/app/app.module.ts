@@ -10,7 +10,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule,
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatProgressSpinnerModule,
   MatSelectModule, MatTabsModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
@@ -48,6 +48,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatIconModule,
     MatTabsModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }

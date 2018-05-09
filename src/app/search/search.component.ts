@@ -9,14 +9,20 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   public searchString: string;
+  public loading = false;
 
-  constructor(private searchService: SearchService, private router: Router) { }
+  constructor(private searchService: SearchService, private router: Router) {
+    searchService.booksObservable.subscribe(data => {
+      this.loading = false;
+    });
+  }
 
   ngOnInit() {
   }
 
   public search(): void {
     if (this.searchString) {
+      this.loading = true;
       this.searchService.search('q=' + this.searchString.replace(' ', '+'));
     }
   }

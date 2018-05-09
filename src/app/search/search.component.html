@@ -4,5 +4,6 @@
     <input matInput [(ngModel)]="searchString">
   </mat-form-field>
   <button mat-raised-button class="col-12 col-sm-1" (click)="search()">Search</button>
+  <mat-spinner *ngIf="loading" class="center"></mat-spinner>
 </div>
 <app-book-table></app-book-table>

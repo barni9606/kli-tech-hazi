@@ -17,8 +17,13 @@ export class AdvancedSearchComponent implements OnInit {
     {label: 'Person', query: 'person', variable: ''},
     {label: 'Publisher', query: 'publisher', variable: ''}
   ];
+  public loading = false;
 
-  constructor(private searchService: SearchService, private router: Router) { }
+  constructor(private searchService: SearchService, private router: Router) {
+    searchService.booksObservable.subscribe(data => {
+      this.loading = false;
+    });
+  }
 
   private static formatString(query: string, variable: string): string {
     if (variable && variable !== '') {
@@ -38,6 +43,7 @@ export class AdvancedSearchComponent implements OnInit {
     }
     if (searchString.length >= 1) {
       searchString = searchString.substring(0, searchString.length - 1);
+      this.loading = true;
       this.searchService.search(searchString);
     }
   }

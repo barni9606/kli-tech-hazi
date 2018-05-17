@@ -31,13 +31,15 @@ export class BookDetailComponent implements OnInit, OnDestroy {
     this.bookDetailsSubscription = this.bookDetailService.bookDetailsObservable.subscribe((data) => {
       if (data) {
         this.title = data.title;
-        if (typeof data.description === 'string') {
-          this.description = data.description;
-        } else {
-          this.description = data.description.value;
+        if (data.description) {
+          if (typeof data.description === 'string') {
+            this.description = data.description;
+          } else {
+            this.description = data.description.value;
+          }
         }
         this.published = data.first_publish_year;
-        this.covers = data.covers;
+        this.covers = data.covers || [];
         this.subtitle = data.subtitle;
         this.subjects = data.subjects;
         this.subjectTimes = data.subject_times;
